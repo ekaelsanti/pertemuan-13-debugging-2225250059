@@ -1,16 +1,25 @@
+# Praktik 4: Debugging
 def hitung_rata_rata(nilai):
-    total = sum(nilai)
-    return total / 5  # BUG 1: Hardcode 5
+    if len(nilai) == 0:
+        return 0
+    return sum(nilai) / len(nilai)
 
-def status(rata_rata):
-    if rata_rata > 60:  # BUG 2: Seharusnya >=
+def status(nilai):
+    if nilai >= 60:
         return "Lulus"
-    else:
-        return "Tidak lulus"
+    return "Tidak lulus"
 
 def nilai_tertinggi(nilai):
-    tertinggi = 0  # BUG 3: Seharusnya nilai[0]
-    for n in nilai:
-        if n < tertinggi:  # BUG 3: Seharusnya >
-            tertinggi = n
+    if len(nilai) == 0:
+        return None
+    tertinggi = nilai[0]
+    for x in nilai[1:]:
+        if x > tertinggi:
+            tertinggi = x
     return tertinggi
+
+# Pengujian
+nilai = [80, 60, 90, 70]
+print("Rata-rata:", hitung_rata_rata(nilai))
+print("Status 60:", status(60))
+print("Tertinggi:", nilai_tertinggi(nilai))
