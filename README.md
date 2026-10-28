@@ -33,5 +33,15 @@ Program `praktik_4_debugging.py` digunakan untuk menghitung nilai rata-rata dari
    * Akar Penyebab: Inisialisasi awal nilai 0 dan perbandingan operator terbalik.
    * Perbaikan: Inisialisasi awal menggunakan `nilai[0]` dan perbandingan menggunakan `>`.
 
+## Retest
+| ID | Input | Expected | Actual Perbaikan | Status |
+|---|---|---|---|---|
+| TC-01 | [80, 90] | 85.0 | 85.0 | PASS |
+| TC-02 | 60 | Lulus | Lulus | PASS |
+| TC-03 | [-10, -5] | -5 | -5 | PASS |
+
 ## Cara Menjalankan
 python3 grafik/praktik_4_debugging.py
+
+## Refleksi
+Teknik debugging yang paling membantu adalah penggunaan **breakpoint** bersama fitur **tracing/step over** pada IDE. Teknik ini memungkinkan penelusuran perubahan nilai variabel secara langsung pada tiap baris eksekusi tanpa perlu menambahkan perintah `print()` manual, sehingga mempercepat penemuan bug logika.
